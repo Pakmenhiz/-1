@@ -8,8 +8,8 @@ from sklearn.cluster import MeanShift, estimate_bandwidth
 data = np.loadtxt('lad01.txt', delimiter=',')
 
 # Крок 1: Визначення кількості кластерів методом зсуву середнього
-bandwidth = estimate_bandwidth(data, quantile=0.2, n_samples=500)
-ms = MeanShift(bandwidth=bandwidth, bin_seeding=True)
+bandwidth = estimate_bandwidth(data, quantile=0.15, n_samples=500)
+ms = MeanShift(bandwidth=bandwidth, bin_seeding=True )
 ms.fit(data)
 labels = ms.labels_
 n_clusters_ = len(np.unique(labels))
